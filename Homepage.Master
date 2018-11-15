@@ -1,0 +1,392 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="HomePage.master.cs" Inherits="student_project.HomePage" %>
+
+<%@ Register src="MainBanner.ascx" tagname="MainBanner" tagprefix="uc1" %>
+
+
+
+<%@ Register src="MainHeader.ascx" tagname="MainHeader" tagprefix="uc3" %>
+
+<%@ Register src="LeftMenu.ascx" tagname="LeftMenu" tagprefix="uc4" %>
+
+<%@ Register src="Footer.ascx" tagname="Footer" tagprefix="uc5" %>
+
+
+
+<%@ Register src="Horizontal_menu2.ascx" tagname="Horizontal_menu2" tagprefix="uc2" %>
+
+
+
+
+<%@ Register src="CopyRights.ascx" tagname="CopyRights" tagprefix="uc6" %>
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+
+
+
+
+<head runat="server">
+<meta name="viewport" content="width=device-width" />
+<link id="Link1" rel="shortcut icon" href="~/favicon.ico" type="image/x-icon"/>
+                <link id="Link2"  rel="icon" href="~/favicon.ico" type="image/ico"/>
+    <title>Welcome to GITAM University</title>
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+ 
+
+<!-- 320 css -->
+<link rel="stylesheet" type="text/css" media="only screen and (min-width:320px)" href="css_320/hmenu_style_320.css" />
+<link rel="stylesheet" type="text/css" media="only screen and (min-width:320px)" href="css_320/stylesheet_320.css"/>
+<link rel='stylesheet' type="text/css" media="only screen and (min-width:320px)" href="css_320/02_320.css"/>
+<!--
+<link rel="stylesheet" type="text/css" media="only screen and (min-width:320px)" href="css_320/hmenu_ie6_style_320.css" />
+<link rel="stylesheet" type="text/css" media="only screen and (min-width:320px)" href="css_320/style_middletabs_320.css" />
+<link rel="stylesheet" type="text/css" media="only screen and (min-width:320px)" href="css_320/stylesheet2_320.css" />
+-->
+<!-- end of 320 css -->
+
+<!-- 480 css -->
+<link rel="stylesheet" type="text/css" media="only screen and (min-width:480px)" href="css_480/hmenu_style_480.css" />
+<link rel="stylesheet" type="text/css" media="only screen and (min-width:480px)" href="css_480/stylesheet_480.css"/>
+<link rel='stylesheet' type="text/css" media="only screen and (min-width:480px)" href="css_480/02_480.css"/>
+<!--
+<link rel="stylesheet" type="text/css" media="only screen and (min-width:480px)" href="css_480/hmenu_ie6_style_480.css" />
+<link rel="stylesheet" type="text/css" media="only screen and (min-width:480px)" href="css_480/style_middletabs_480.css" />
+<link rel="stylesheet" type="text/css" media="only screen and (min-width:480px)" href="css_480/stylesheet2_480.css" />
+-->
+<!--end of 480 css -->
+
+<!-- 600 css -->
+<link rel="stylesheet" type="text/css" media="only screen and (min-width:600px)" href="css_600/hmenu_style_600.css" />
+<link rel="stylesheet" type="text/css" media="only screen and (min-width:600px)" href="css_600/stylesheet_600.css"/>
+<link rel='stylesheet' type="text/css" media="only screen and (min-width:600px)" href="css_600/02_600.css"/>
+<!--
+<link rel="stylesheet" type="text/css" media="only screen and (min-width:600px)" href="css_600/hmenu_ie6_style_600.css" />
+<link rel="stylesheet" type="text/css" media="only screen and (min-width:600px)" href="css_600/style_middletabs_600.css" />
+<link rel="stylesheet" type="text/css" media="only screen and (min-width:600px)" href="css_600/stylesheet2_600.css" />
+-->
+<!-- end of 600 css -->
+
+<!-- 760 css -->
+<link rel="stylesheet" type="text/css" media="only screen and (min-width:760px)" href="css_760/hmenu_style_760.css" />
+<link rel="stylesheet" type="text/css" media="only screen and (min-width:760px)" href="css_760/stylesheet_760.css"/>
+<link rel='stylesheet' type="text/css" media="only screen and (min-width:760px)" href="css_760/02_760.css"/>
+<!--
+<link rel="stylesheet" type="text/css" media="only screen and (min-width:760px)" href="css_760/hmenu_ie6_style_760.css" />
+<link rel="stylesheet" type="text/css" media="only screen and (min-width:760px)" href="css_760/style_middletabs_760.css" />
+<link rel="stylesheet" type="text/css" media="only screen and (min-width:760px)" href="css_760/stylesheet2_760.css" />
+-->
+<!-- end of 760 css -->
+
+<!--1024 css-->
+<link rel="stylesheet" type="text/css" media="only screen and (min-width:1024px)" href="css/hmenu_style.css" />
+<link rel="stylesheet" type="text/css" media="only screen and (min-width:1024px)" href="css/stylesheet.css"/>
+<link rel='stylesheet' type="text/css" media="only screen and (min-width:1024px)" href="css/02.css"/>
+<!--<link rel="stylesheet" type="text/css" media="only screen and (min-width:760px)" href="css/hmenu_ie6_style.css" />-->
+<!--<link rel="stylesheet" type="text/css" media="only screen and (min-width:760px)" href="css/style_middletabs.css" />-->
+<!--<link rel="stylesheet" type="text/css" media="only screen and (min-width:760px)" href="css/stylesheet2.css" />-->
+<!-- end of 1024 css-->
+
+<script type="text/javascript" src="js/jquery-latest.js"></script>
+<script type="text/javascript"  src="js/menu.js"></script>  
+<script type="text/javascript" src="js/jcarousellite_1.0.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.min.js"></script>
+<script type="text/javascript" src="js/jquery.colorbox-min.js"></script>
+<script type="text/javascript" src="js/jquery.lavalamp.min.js"></script>
+<script type="text/javascript">
+		$(function() {
+			$("#project-slider").jCarouselLite({
+				btnNext: ".next",
+				btnPrev: ".prev",
+//				easing: "bounceout",
+				auto: 4500,
+				speed: 800,
+				autoStart: 1000,
+				visible: 4
+			});
+		});
+	$(document).ready(function(){
+			$("a[rel='mini']").colorbox({transition:"elastic", maxWidth:'90%', maxHeigt:'90%'});
+			$("a[rel='peep']").colorbox({transition:"elastic", width:"610px", height:"410px"});
+			$("a[rel='peeplink']").colorbox({transition:"elastic", width:"610px", height:"410px"});
+			$("a[rel='eventpics']").colorbox({transition:"elastic"});
+			$(".video").colorbox({ transition:"elastic",iframe:true, width:"595px", height:"410px"});			
+		});
+</script>
+
+<!--<script src="js/loopedslider.js" type="text/javascript" charset="utf-8"></script> -->
+
+<!--google search start -->
+<script src="//www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript"> 
+  google.load('search', '1', {language : 'en'});
+  google.setOnLoadCallback(function() {
+    var customSearchControl = new google.search.CustomSearchControl(
+      '016012185390064641722:vsugipd8xte');
+
+    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+    customSearchControl.draw('cse');
+  }, true);
+</script>
+
+<!-- google search end -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#menu_320_link").click(function () {
+            $("#menubar_320").slideToggle('slow');
+        });
+
+        $("#about_gitam").mouseover(function () {
+            $("#about_gitam_child_ul").show();
+        });
+
+        $("#about_gitam").mouseleave(function () {
+            $("#about_gitam_child_ul").hide();
+        });
+
+        $("#about_gitam_child_ul").mouseleave(function () {
+            $("#about_gitam_child_ul").hide();
+        });
+
+
+
+        $("#Institutes").mouseover(function () {
+            $("#Institutes_child_ul").show();
+        });
+
+        $("#Institutes").mouseleave(function () {
+            $("#Institutes_child_ul").hide();
+        });
+
+        $("#Institutes_child_ul").mouseleave(function () {
+            $("#Institutes_child_ul").hide();
+        });
+
+
+
+        $("#pro_offered").mouseover(function () {
+            $("#pro_offered_child_ul").show();
+        });
+
+        $("#pro_offered").mouseleave(function () {
+            $("#pro_offered_child_ul").hide();
+        });
+
+        $("#pro_offered_child_ul").mouseleave(function () {
+            $("#pro_offered_child_ul").hide();
+        });
+
+
+        $("#admissions").mouseover(function () {
+            $("#admissions_child_ul").show();
+        });
+
+        $("#admissions").mouseleave(function () {
+            $("#admissions_child_ul").hide();
+        });
+
+        $("#admissions_child_ul").mouseleave(function () {
+            $("#admissions_child_ul").hide();
+        });
+
+
+        $("#examinations").mouseover(function () {
+            $("#examinations_child_ul").show();
+        });
+
+        $("#examinations").mouseleave(function () {
+            $("#examinations_child_ul").hide();
+        });
+
+        $("#examinations_child_ul").mouseleave(function () {
+            $("#examinations_child_ul").hide();
+        });
+
+        $("#research_centers").mouseover(function () {
+            $("#research_centers_child_ul").show();
+        });
+
+        $("#research_centers").mouseleave(function () {
+            $("#research_centers_child_ul").hide();
+        });
+
+        $("#research_centers_child_ul").mouseleave(function () {
+            $("#research_centers_child_ul").hide();
+        });
+
+        $("#central_facilities").mouseover(function () {
+            $("#central_facilities_child_ul").show();
+        });
+
+        $("#central_facilities").mouseleave(function () {
+            $("#central_facilities_child_ul").hide();
+        });
+
+        $("#central_facilities_child_ul").mouseleave(function () {
+            $("#central_facilities_child_ul").hide();
+        });
+
+
+        $("#left_content_320_right_arrow").click(function () {
+            $("#left_content_320").hide();
+            $("#leftcontent").show(1000);
+        });
+
+        $(".leftmenu_320_img").click(function () {
+            $("#leftcontent").hide(1000);
+            $("#left_content_320").show(1000);
+        });
+
+      
+
+
+    });
+
+
+
+
+</script>
+
+
+
+
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    <!--top start-->
+   
+    <uc3:MainHeader ID="MainHeader1" runat="server"/>
+  
+<div id="flash_bannerbg">
+<div id="flash_banner">
+<div id="project-front">
+
+
+
+<div class="prev"><img src="images/left-arrow.gif" border="0" alt="" /></div>
+        <div class="next"><img src="images/right-arrow.gif" border="0" alt="" /></div>
+  <div id="project-slider">
+          <ul>
+            <li class="slide" style="background: transparent url(images/1.jpg) no-repeat; width:196px; height:106px;">
+              <div class="positionSlide"><a href="#"> <span>GITAM Main Gate</span></a></div>
+            </li>
+            <li class="slide" style="background:url(images/2.jpg) no-repeat; width:196px; height:106px;">
+              <div class="positionSlide"><a href="http://www.gitam.edu/aboutus.aspx"> <span>Gandhiji (inside GITAM)</span></a></div>
+            </li>
+            
+            <li class="slide" style="background:url(images/03.jpg) no-repeat; width:196px; height:106px;">
+              <div class="positionSlide"><a href="http://www.gitam.edu/aboutus.aspx"> <span>GITAM Bhavan</span></a></div>
+            </li>
+            <li class="slide" style="background:url(images/8.jpg) no-repeat; width:196px; height:106px;">
+              <div class="positionSlide"><a href="http://www.gitam.edu/GIT/aboutus.aspx"> <span>Chandrahas Bhavan(ICT Building)</span></a></div>
+            </li>
+         
+            <li class="slide" style="background:url(images/3.jpg) no-repeat; width:196px; height:106px;">
+              <div class="positionSlide"><a href="http://www.gitam.edu/GIT/aboutus.aspx"> <span>GITAM Institute of Technology</span></a></div>
+            </li>
+            <li class="slide" style="background:url(images/visweswaraiahbhavan.jpg) no-repeat; width:196px; height:106px;">
+              <div class="positionSlide"><a href="http://www.gitam.edu/GIT/aboutus.aspx"> <span>Sir Visweswaraiah Bhavan</span></a></div>
+            </li>
+             
+            <li class="slide" style="background:url(images/4.jpg) no-repeat; width:196px; height:106px;">
+              <div class="positionSlide"><a href="http://www.gitam.edu/GIS/aboutus.aspx"> <span>GITAM Institute of Science</span></a></div>
+            </li>
+            <li class="slide" style="background:url(images/5.jpg) no-repeat; width:196px; height:106px;">
+              <div class="positionSlide"><a href="http://www.gitam.edu/GIM/GIMaboutus.aspx"> <span>GITAM Institute of Management</span></a></div>
+            </li>
+           
+           
+           <li class="slide" style="background:url(images/gsib.jpg) no-repeat; width:196px; height:106px;">
+              <div class="positionSlide"><a href="http://www.gsib.org"  target="_blank" > <span>School of International Business</span></a></div>
+            </li>
+           
+           
+           
+             <li class="slide" style="background:url(images/7.jpg) no-repeat; width:196px; height:106px;">
+              <div class="positionSlide"><a href="http://www.gitam.edu/GIP/aboutus.aspx"> <span>GITAM Institute of Pharmacy</span></a></div>
+            </li>
+            
+             <li class="slide" style="background:url(images/GSA.jpg) no-repeat; width:196px; height:106px;">
+              <div class="positionSlide"><a href="http://www.gitam.edu/GSA/AboutGSA.aspx"> <span>GITAM School of Architecture</span></a></div>
+            </li>
+            
+             <li class="slide" style="background:url(images/law.jpg) no-repeat; width:196px; height:106px;">
+              <div class="positionSlide"><a href="http://www.gitam.edu/SOL/welcomePage.aspx"> <span>School of LAW</span></a></div>
+            </li>
+            
+            
+            <li class="slide" style="background:url(images/krc_building.jpg) no-repeat; width:196px; height:106px;">
+              <div class="positionSlide"><a href="http://www.gitam.edu/Library/AboutUs.aspx?id=573"> <span>KRC (Central Library)</span></a></div>
+            </li>
+            <li class="slide" style="background:url(images/9.jpg) no-repeat; width:196px; height:106px;">
+              <div class="positionSlide"><a href="http://www.gitam.edu/Hyderabad/aboutus.aspx"> <span>Hyderabad Campus</span></a></div>
+            </li>
+ 
+           
+          </ul>
+  </div>
+   
+
+</div>
+    
+    
+        </div>
+</div>
+    
+ <!--banner end-->
+  
+    
+<!--Horizontal Manu start-->
+      
+    <div id="horizontal-navbg"> 
+   <a style="text-decoration:none;color:White" href="#" id="menu_320_link"><div id="menu_320">Menu</div></a>
+    <div id="horizontal-nav">
+    <uc2:Horizontal_menu2 ID="Horizontal_menu21" runat="server" />
+    </div>
+    </div>
+   <!--   <div class="mainbg_1"> -->
+   <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+      <!--Horizontal Manu end-->  
+     
+<div id="maincontent"> 
+
+<div id="leftcontent1">      
+     
+    </div>  
+   
+</div>
+ 
+
+ </asp:ContentPlaceHolder>
+<!--</div> -->
+<div class="clear" style="height:0px;"></div>
+<div style="height:30px"></div>   
+<%--<div style="height:30px;"></div>--%>
+<!--footer start-->
+ 
+        
+    <uc5:Footer ID="Footer1" runat="server" />
+
+  <!--footer end-->
+      <uc6:CopyRights ID="CopyRights1" runat="server" />
+ <%-- <--copyrights start---> --%><div>
+      
+    </div>
+  
+  
+  <%--  <--copyrights end--->   --%>
+      
+    </form>
+
+</body>
+
+</html>
